@@ -6,7 +6,7 @@ This repository contains the solution to the problem of payment calculation base
 For running the program, simply clone this repository or copy the files and folders into a local folder, and run this command in a terminal from that folder:
 
 ```bash
-python calc_salary.py <path/to/schedule> \[path/to/payment/table\]
+python calc_salary.py <path/to/schedule> [path/to/payment/table]
 ```
 
 Where:
