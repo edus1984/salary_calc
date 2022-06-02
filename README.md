@@ -41,72 +41,16 @@ The program consists of two classes, namely `Employee` and `PaymentStructure`, i
   + `compose_payment_structure(lines)`: Makes up the payment structure from an array of text lines, each one containing a time span with its amount to pay.
   + `partial_amount(day_of_week,time_interval)`: Finds the corresponding time span that includes the worked interval of hours, and calculates the product of the number of hours and the amount per hour in the payment structure.
 The file *calc_salary.py* contains the main method that loads the corresponding payment structure and parses the hours report for computing the final amount.
+The *draft* folder contains a Jupyter notebook that shows the first version of the solution to the main problem and the first working class structure. This is the very first approach taken to this problem.
 
+## Approach and Methodology
+The first step in the development of this solution was the loading and parsing of test files with the required format. For instance, the first iteration went through the processing of an employee schedule sample, as the one provided above for ASTRID. After that, and passing some tests every time a few lines of code were created, the next phase was interpreting and processing the payment structure concepts, understanding it as the table that covers the different hour prices for each time span and week day. The final structure was a dict, containing one entry per day of week, and each entry containing an array per time span for that day. Each time span array consists of the starting and ending time, and the amount to pay for the hours that fall into it.
+Finally, following a bottom-up approach, the solution to the problem of automatically computing the amount to pay according to the schedule was written down on its first version. Then, the complete code was better structured in classes with simpler methods each one, and documented accordingly.
+The final stage of this process was the development of test cases. This phase could be carried out earlier, but the rush for getting the solution working properly and other issues made it harder. Test cases for the two developed classes were built, including tests for each one of the most relevant methods.
 
-
-
-
-
-
-
-* [Triple E - Effective Ensembling of Embeddings and Language Models for NER of Historical German](http://ceur-ws.org/Vol-2696/paper_173.pdf)
-
-We are heavily working on better models for historic texts, so please star or watch this repository!
-
-# Triple E - Effective Ensembling of Embeddings and Language Models for NER of Historical German
-
-In this section we give a brief overview of how to reproduce the results from our paper.
-
-As we heavily use Flair and Transformers for our experiments, you should find the relevant scripts in the
-`experiments/clef-hipe-2020` folder:
-
-* `word-embeddings`: includes scripts for the experiments with different word embeddings
-* `flair-embeddings`: includes scripts for the experiments with different Flair embeddings
-* `stacked`: combines word, Flair and Transformer-based embeddings
-
-# Historic Language Models (Multilingual and monolingual)
-
-For the upcoming [CLEF-HIPE 2022](https://hipe-eval.github.io/HIPE-2022/tasks) we provide several
-multilingual and monolingual Historic Language Models. Please refer to the documentation [here](hlms.md).
-
-# Changelog
-
-* 22.03.2022: Initial version for our HIPE-2022 submission [here](experiments/clef-hipe-2022/README.md).
-* 06.12.2021: Release of smaller multilingual Historic Language Models (ranging from 2-8 layers) - more information [here](hlms.md).
-* 18.11.2021: Release of first multilingual and monolingual Historic Language Models - more information [here](hlms.md).
-* 04.11.2021: We will take part in the upcoming [CLEF-HIPE 2022](https://hipe-eval.github.io/HIPE-2022/tasks) Shared Task.
-              We plan to release new language models before the start of the official shared task very soon.
-* 30.10.2021: Manually sentence-segmented Development and Test data for English was added.
-* 30.11.2020: Initial version of this repository.
-
-# Citation
-
-You can use the following BibTeX entry for citation:
-
-```bibtex
-@inproceedings{DBLP:conf/clef/SchweterM20,
-  author    = {Stefan Schweter and
-               Luisa M{\"{a}}rz},
-  editor    = {Linda Cappellato and
-               Carsten Eickhoff and
-               Nicola Ferro and
-               Aur{\'{e}}lie N{\'{e}}v{\'{e}}ol},
-  title     = {Triple {E} - Effective Ensembling of Embeddings and Language Models
-               for {NER} of Historical German},
-  booktitle = {Working Notes of {CLEF} 2020 - Conference and Labs of the Evaluation
-               Forum, Thessaloniki, Greece, September 22-25, 2020},
-  series    = {{CEUR} Workshop Proceedings},
-  volume    = {2696},
-  publisher = {CEUR-WS.org},
-  year      = {2020},
-  url       = {http://ceur-ws.org/Vol-2696/paper\_173.pdf},
-  timestamp = {Tue, 27 Oct 2020 17:12:48 +0100},
-  biburl    = {https://dblp.org/rec/conf/clef/SchweterM20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-```
-
-
+## to-do things:
+* Check intervals that belong to more than one slot: The program should separate the hours that belong to one slot and another in a schedule if that was the case, and correctly multiply each number of hours by the corresponding amount.
+* Launch notifications of malformed strings: If a string could not be parsed to get payment structures or schedules, the program should tell the user about the issue without rising an exception.
 
 # PROBLEM STATEMENT
 
