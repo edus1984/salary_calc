@@ -52,6 +52,12 @@ The final stage of this process was the development of test cases. This phase co
 * Check intervals that belong to more than one slot: The program should separate the hours that belong to one slot and another in a schedule if that was the case, and correctly multiply each number of hours by the corresponding amount.
 * Launch notifications of malformed strings: If a string could not be parsed to get payment structures or schedules, the program should tell the user about the issue without rising an exception.
 
+## Compiling the program
+If you need to get an executable file of this program in your operating system, you can build it using *PyInstaller*. For this purpose, you can install this library with `pip install pyinstaller` in case you don't have done yet. Then, just execute the next command in a terminal, inside the folder of the project:
+```bash
+pyinstaller --windowed --onefile calc_salary.py
+```
+
 # PROBLEM STATEMENT
 
 The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
